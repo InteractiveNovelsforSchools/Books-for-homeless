@@ -59,22 +59,37 @@
 <script>
   const searchInput = document.getElementById("gameSearch");
   const gameRows = document.querySelectorAll(".game-row");
+  const resultBox = document.getElementById("searchResult");
 
   searchInput.addEventListener("input", function () {
     const query = this.value.toLowerCase();
+    let firstMatch = null;
 
     gameRows.forEach(row => {
       const gameName = row.innerText.toLowerCase();
 
-      // Fuzzy match: checks if ANY part of the name matches
       if (gameName.includes(query)) {
         row.style.display = "flex";
+        if (!firstMatch) firstMatch = row.innerText;
       } else {
         row.style.display = "none";
       }
     });
+
+    // Show result box
+    if (query === "") {
+      resultBox.style.display = "none";
+      resultBox.innerText = "";
+    } else if (firstMatch) {
+      resultBox.style.display = "block";
+      resultBox.innerText = "Top result: " + firstMatch;
+    } else {
+      resultBox.style.display = "block";
+      resultBox.innerText = "No games found";
+    }
   });
 </script>
+
 
   </body>
 </html>
