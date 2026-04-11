@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Snake Game</title>
+    <style>
+      body {
+        background: #111;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      canvas {
+        background: #222;
+        border: 2px solid #0f0;
+      }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <div id="wrapper" style="
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    ">
+      <div id="score" style="
+        color: lime;
+        font-size: 24px;
+        margin-bottom: 10px;
+      ">
+        Score: 0
+<div id="highscore" style="
+  color: yellow;
+  font-size: 20px;
+  margin-bottom: 20px;
+">
+  High Score: 0
+</div>
+
+      </div>
+
+      <canvas id="game" width="400" height="400"></canvas>
+    </div>
+
+    <script src="snake.js"></script>
+  </body>
+</html>
