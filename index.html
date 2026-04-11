@@ -56,6 +56,25 @@
 
 
     </section>
+<script>
+  const searchInput = document.getElementById("gameSearch");
+  const gameRows = document.querySelectorAll(".game-row");
+
+  searchInput.addEventListener("input", function () {
+    const query = this.value.toLowerCase();
+
+    gameRows.forEach(row => {
+      const gameName = row.innerText.toLowerCase();
+
+      // Fuzzy match: checks if ANY part of the name matches
+      if (gameName.includes(query)) {
+        row.style.display = "flex";
+      } else {
+        row.style.display = "none";
+      }
+    });
+  });
+</script>
 
   </body>
 </html>
