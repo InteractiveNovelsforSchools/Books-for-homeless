@@ -49,14 +49,15 @@ body {
 /* SCROLLABLE GAME LIST */
 .game-scroll-box {
   width: 350px;
-  height: 250px; /* fixed height = shows about 3 games */
-  overflow-y: auto;
+  height: 250px; /* shows about 3 games */
+  overflow-y: auto; /* scrolls inside the box */
   background: #ffffff;
   border: 3px solid #0a0f24;
   border-radius: 12px;
   padding: 10px;
   margin: 0 auto;
 }
+
 
 
 .search-bar {
